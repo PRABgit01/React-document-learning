@@ -2,6 +2,37 @@
   padding: 20px;
 }
 
-body{
-  background-color: lightblue;
+.buttonstyle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.button{
+  background-color: palegoldenrod;
+}
+
+
+
+body{
+  background-color: rgb(203, 173, 230);
+}
+
+
+nav{
+  background-color: rgb(176, 218, 218);
+  display: flex;
+  padding: 27px;
+  flex-direction: column;
+}
+
+nav a{
+  margin-top: 20px;
+}
+/* 
+nav a.active {
+  display: flex;
+  padding: 2px;
+  background-color:darkblue;
+  font-weight: bold;
+} */
