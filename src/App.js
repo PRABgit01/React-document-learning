@@ -10,7 +10,7 @@ import { Mapuse } from "./redringlist/mapfeature";
 
 import "./stylingcomponent/App.css";
 import { HomePage } from "./componentsPage/HomePage";
-import { AboutPage } from "./componentsPage/AboutPage";
+// import { AboutPage } from "./componentsPage/AboutPage";
 import { DontExist } from "./componentsPage/DontExist";
 import { NavBarPage } from "./componentsPage/Navbard";
 import Dangerzone from "./componentsPage/dangerzone";
@@ -20,8 +20,10 @@ import New from "./componentsPage/product/new";
 import Users from "./componentsPage/user/users";
 import UsersDetails from "./componentsPage/user/usersDetails";
 import Admin from "./componentsPage/user/Admin";
+import React from "react";
 
 export default function PackingList2() {
+  const LazyAbout=React.lazy(()=>import('./componentsPage/AboutPage'))
   return (
     <>
       {/* <DataShow /> */}
@@ -36,7 +38,7 @@ export default function PackingList2() {
       <NavBarPage />
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
-        <Route path="about" element={<AboutPage />}></Route>
+        <Route path="about" element={<><React.Suspense fallback="loading..."/><LazyAbout /></>}></Route>
         <Route path="dontexist" element={<DontExist />}></Route>
         <Route path="product" element={<Product />}>
           <Route index element={<New />} />
